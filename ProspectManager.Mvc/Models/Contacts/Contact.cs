@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProspectManager.Mvc.Models.Contacts
@@ -15,8 +16,12 @@ namespace ProspectManager.Mvc.Models.Contacts
         [EmailAddress]
         public string Email { get; set; }
 
+<<<<<<< HEAD
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+=======
+        [DisplayName("Birthdate")]
+>>>>>>> 09a537b3fb9da8f9f7252d91f4d5be06d39a5105
         public DateTime BirthDate { get; set; }
 
         [DataType(DataType.Date)]
