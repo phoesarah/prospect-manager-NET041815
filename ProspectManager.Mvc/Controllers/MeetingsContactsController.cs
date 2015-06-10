@@ -23,16 +23,34 @@ namespace ProspectManager.Mvc.Controllers
         {
             var meeting = db.Meetings.Find(id);
             ICollection<Contact> ContactList = new List<Contact>();
-            foreach (var meetingcontact in meeting.Contacts)
-            {
-                foreach (var contact in db.Contacts)
-                {
-                    if (meetingcontact != contact)
-                    {
-                      ContactList.Add(contact);
-                    }
-                }
-            }
+            //This one seemed like it worked first time, took the name off the list, but then the second time
+            //doubled the names..db probably?
+            //
+            //foreach (var meetingcontact in dmeeting.Contacts)
+            //{
+            //    foreach (var contact in db.Contacts)
+            //    {
+            //        if (meetingcontact != contact)
+            //        {
+            //          ContactList.Add(contact);
+            //        }
+            //    }
+            //}
+
+            //add so it doesn't give exception -- MultipleActiveResultSets=True to connection string because of iterating through
+            //foreach (var contact in db.Contacts)
+            //{
+            //    foreach (var meetings in db.Meetings)
+            //    {
+            //        if (meetings.Contacts != contact.Meetings)
+            //        {
+            //            ContactList.Add(contact);
+            //        }
+            //    }
+            //}
+
+            // above doesn't work beacuse I'm comparing meetings to meeting contacts ... need to figure out what i'm comparing
+
             ViewBag.ContactList = ContactList;
          //ViewBag.ContactList = db.Contact.ToList();
            //ViewBag.ContactList = db.Contacts.Where(x => meeting.Contacts.Contains(x));
