@@ -115,6 +115,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\MeetingsController.cs" />
     <Compile Include="Controllers\TodoItemsController.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Models\Contacts\Contact.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -146,6 +147,8 @@
     <Content Include="Views\Meetings\Details.cshtml" />
     <Content Include="Views\Meetings\Edit.cshtml" />
     <Content Include="Views\Meetings\Index.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
