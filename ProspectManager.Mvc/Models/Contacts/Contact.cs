@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ProspectManager.Mvc.Models.Meetings;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProspectManager.Mvc.Models.Contacts
 {
@@ -12,6 +15,7 @@ namespace ProspectManager.Mvc.Models.Contacts
         [Required]
         public string Name { get; set; }
 
+        [Index(IsUnique = true)]
         [MaxLength(250)]
         [EmailAddress]
         public string Email { get; set; }
@@ -23,11 +27,8 @@ namespace ProspectManager.Mvc.Models.Contacts
 
         public DateTime BirthDate { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-        public string ReturnDateForDisplay
-        {
-            get { return this.BirthDate.ToString(); }
-        }
+        
+        public virtual ICollection<Meeting> Meetings { get; set; }
+
     }
 }
