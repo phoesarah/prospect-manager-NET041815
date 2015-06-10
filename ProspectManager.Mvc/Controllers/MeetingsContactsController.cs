@@ -22,7 +22,8 @@ namespace ProspectManager.Mvc.Controllers
         public ActionResult Create(int id)
         {
             var meeting = db.Meetings.Find(id);
-            ICollection<Contact> ContactList = new List<Contact>();
+            
+           // ICollection<Contact> ContactList = new List<Contact>();
             //This one seemed like it worked first time, took the name off the list, but then the second time
             //doubled the names..db probably?
             //
@@ -49,11 +50,16 @@ namespace ProspectManager.Mvc.Controllers
             //    }
             //}
 
-            // above doesn't work beacuse I'm comparing meetings to meeting contacts ... need to figure out what i'm comparing
+           
+           
+            
+         
 
-            ViewBag.ContactList = ContactList;
-         //ViewBag.ContactList = db.Contact.ToList();
-           //ViewBag.ContactList = db.Contacts.Where(x => meeting.Contacts.Contains(x));
+            // above doesn't work beacuse I'm comparing meetings to meeting contacts ... need to figure out what i'm comparing
+           // var contactsinmeeting = db.Contacts.Where(x => x.Meetings.Contains(meeting.Id.Equals(x.Id)));
+       //    ViewBag.ContactList = ContactList;
+           ViewBag.ContactList = db.Contacts.ToList();
+           //ViewBag.ContactList = db.Contacts.Where(x => meeting.Contacts.Contains(x.id));
 
             return View(meeting);
         }
