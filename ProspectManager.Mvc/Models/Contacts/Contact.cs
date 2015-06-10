@@ -16,12 +16,11 @@ namespace ProspectManager.Mvc.Models.Contacts
         [EmailAddress]
         public string Email { get; set; }
 
-<<<<<<< HEAD
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-=======
-        [DisplayName("Birthdate")]
->>>>>>> 09a537b3fb9da8f9f7252d91f4d5be06d39a5105
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+
+        //[DisplayName("Birthdate")]
+
         public DateTime BirthDate { get; set; }
 
         [DataType(DataType.Date)]
