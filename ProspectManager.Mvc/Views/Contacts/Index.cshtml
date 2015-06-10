@@ -1,10 +1,8 @@
-<<<<<<< HEAD
+
 ﻿@using System.Runtime.Serialization
 @model IEnumerable<ProspectManager.Mvc.Models.Contacts.Contact>
-=======
-﻿@model IEnumerable<ProspectManager.Mvc.Models.Contacts.Contact>
 @using ProspectManager.Mvc.Extensions
->>>>>>> 644796c5e78f61fbfb1048220f4d1115ab63ba3c
+
 
 @{
     ViewBag.Title = "Index";
@@ -32,27 +30,9 @@
         <th></th>
     </tr>
 
-<<<<<<< HEAD
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthDate.ToShortDateString())
-            @Html.DisplayFor(modelItem => item.ReturnDateForDisplay.ToString("0:MM/dd/yyyy"))
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </td>
-    </tr>
-}
-=======
+
+
+
     @foreach (var item in Model)
     {
         <tr>
@@ -72,6 +52,6 @@
             </td>
         </tr>
     }
->>>>>>> 644796c5e78f61fbfb1048220f4d1115ab63ba3c
+
 
 </table>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProspectManager.Mvc.Models.Contacts;
 
 namespace ProspectManager.Mvc.Controllers
 {
@@ -21,8 +22,21 @@ namespace ProspectManager.Mvc.Controllers
         public ActionResult Create(int id)
         {
             var meeting = db.Meetings.Find(id);
-           // ViewBag.ContactList = db.Contacts.ToList();
-            ViewBag.ContactList = db.Contacts.Where(x => !meeting.Contacts.Contains(x));
+            ICollection<Contact> ContactList = new List<Contact>();
+            foreach (var meetingcontact in meeting.Contacts)
+            {
+                foreach (var contact in db.Contacts)
+                {
+                    if (meetingcontact != contact)
+                    {
+                      ContactList.Add(contact);
+                    }
+                }
+            }
+            ViewBag.ContactList = ContactList;
+         //ViewBag.ContactList = db.Contact.ToList();
+           //ViewBag.ContactList = db.Contacts.Where(x => meeting.Contacts.Contains(x));
+
             return View(meeting);
         }
 
