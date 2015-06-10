@@ -21,7 +21,8 @@ namespace ProspectManager.Mvc.Controllers
         public ActionResult Create(int id)
         {
             var meeting = db.Meetings.Find(id);
-            ViewBag.ContactList = db.Contacts.ToList();
+           // ViewBag.ContactList = db.Contacts.ToList();
+            ViewBag.ContactList = db.Contacts.Where(x => !meeting.Contacts.Contains(x));
             return View(meeting);
         }
 
